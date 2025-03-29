@@ -2,11 +2,14 @@
 
 URSL (PSOP) is a collection and launcher including multiple classic sonic games and tutorials on how to legally install them and load them all from 1 app!
 
-V4 GAMES:
-- Sonic 1 (With your Data.rsdk)
-- Sonic 2 (With your Data.rsdk) 
+# V4 Games (Not Released, some maybe not in the final version)
+
+## Classic
+
+- Sonic 1 Retro Engine
+- Sonic 2 Retro Engine
 - Sonic 3 & Knuckles PC Port
-- Sonic CD (With your Data.rsdk)
+- Sonic CD Retro Engine
 
 ## Emulator
 - Sonic 1
@@ -17,6 +20,14 @@ V4 GAMES:
 - Sonic Triple Trouble
 - Sonic Blast
 - Sonic Chaos
+
+## Extra 
+
+- Sonic Forever
+- Sonic 2 Absolute
+- Sonic Forever: Expansion Pack
+- Sonic 3: Angel Island Revisited
+- Sonic Mania Plus
 
 
 ## ALSO THIS IS NOT A PIRACY PROJECT (anymore), YOU WILL BE ASKED TO PUT REQUIED FILES
