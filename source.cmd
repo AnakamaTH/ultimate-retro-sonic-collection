@@ -21,7 +21,7 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 :FirstTime
 if exist data\req\check.txt (set first=1) else set first=0
 
-if %first%==0 goto:Menu
+if %first%=0 goto:Menu
 
 :: Show a warning for installing all the files
 
