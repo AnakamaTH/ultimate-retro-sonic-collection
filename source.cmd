@@ -32,8 +32,7 @@ call :ColorText C "!! WARNING !!"
 echo.
 echo Please make sure you downloaded all the files from the releases and extracted them!
 echo Otherwise, the games will not work!
-echo Press any button to contiune...
-pause>nul
+pause
 
 :Redist
 cls
