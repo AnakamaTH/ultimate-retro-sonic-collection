@@ -1,4 +1,4 @@
-:: WORKS IN PROGGES BUILD
+:: WORKS IN PROCCES BUILD
 :: Created by AnakamaTheHedgehog
 
 @echo off
