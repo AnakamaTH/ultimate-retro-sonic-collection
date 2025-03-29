@@ -34,6 +34,12 @@ echo Please make sure you downloaded all the files from the releases and extract
 echo Otherwise, the games will not work!
 pause
 
+:: Install requied redist
+:: Say that in blue
+:: Go into the redist directory
+:: Wait for BizHawk Prereqs to install then continue
+:: Pretty much it
+
 :Redist
 cls
 call :ColorText 9 "Installing requied redist..."
