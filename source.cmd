@@ -5,7 +5,6 @@
 set version=4.1
 set directory=%cd%
 set name=Ultimate Retro Sonic Collection (PSOP)
-set first=0
 echo Please wait...
 title %name% V%version%
 (NET FILE||(powershell start-process -FilePath '%0' -verb runas)&&(exit \B)) >NUL 2>&1
@@ -20,7 +19,9 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 :: Check if user is running for the first time by seeing if a file is still there
 
 :FirstTime
-if exist data\req\check.txt (set first=1) else goto:Menu
+if exist data\req\check.txt (set first=1) else set first=0
+
+if %first%==0 goto:Menu
 
 :: Show a warning for installing all the files
 
@@ -116,7 +117,6 @@ if %choice%==- goto:exit
 if %choice%==c goto:credits
 if %choice%==C goto:credits
 if %choice%==+ goto:suggest
-if 
 
 :Settings
 cls
