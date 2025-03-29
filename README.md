@@ -1,3 +1,3 @@
-# Ultimate Retro Sonic Collection (Also known as Proper Sonic Origins Plus)
+# Ultimate Retro Sonic Launcher (Also known as Classic Sonic Hub)
 
-Classic Sonic Hub is a project including multiple classic sonic games and tutorials on how to legally install them and play them throught a launcher!
+URSL (CSH) is a launcher including multiple classic sonic games and tutorials on how to legally install them and load them all from 1 app!
