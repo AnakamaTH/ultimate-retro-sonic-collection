@@ -4,7 +4,7 @@
 @echo off
 set version=4.01
 set directory=%cd%
-set name=Proper Sonic Origins Plus
+set name=Classic Sonic Hub (PSOP)
 set first=0
 echo Please wait...
 title %name% V%version%
