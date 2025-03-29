@@ -5,7 +5,7 @@ URSL (PSOP) is a collection and launcher including multiple classic sonic games 
 ## Currently WiP
 
 # V4 Games 
-## (Not Released, some maybe not in the final version)
+## (Not Released, some may not be in the final version)
 
 ## Classic
 
