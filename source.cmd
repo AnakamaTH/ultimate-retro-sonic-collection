@@ -23,7 +23,6 @@ if exist data\req\check.txt (set first=1) else goto:Menu
 :: Show a warning for installing all the files
 
 :Warning
-if "%date%" == "Cmt 29.03.2025" goto:Menu
 cls
 call :ColorText C "!! WARNING !!"
 echo.
@@ -58,7 +57,6 @@ start /wait vcredist2013_x86.exe /passive /norestart
 
 start /wait vcredist2015_2017_2019_2022_x86.exe /passive /norestart
 
-
 :X64
 
 start /wait vcredist2005_x86.exe /q
@@ -79,7 +77,7 @@ start /wait vcredist2013_x64.exe /passive /norestart
 start /wait vcredist2015_2017_2019_2022_x86.exe /passive /norestart
 start /wait vcredist2015_2017_2019_2022_x64.exe /passive /norestart
 
-del data\redist\check.txt
+del data\req\check.txt
 cd ..
 cd ..
 
