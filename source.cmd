@@ -2,7 +2,7 @@
 :: Created by AnakamaTheHedgehog
 
 @echo off
-set version=4.01
+set version=4.1
 set directory=%cd%
 set name=Ultimate Retro Sonic Launcher (PSOP)
 set first=0
