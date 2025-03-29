@@ -97,13 +97,13 @@ echo ============================================================
 echo  %name% V%version% 
 echo ============================================================
 echo.
-echo  [ 1 ] 16 BIT CLASSICS
-echo  [ 2 ] EMULATOR 
-echo  [ 3 ] SONIC 4
-echo  [ 4 ] EXTRA
+echo  [ 1 ] 16 Bit Classics
+echo  [ 2 ] Emulator
+echo  [ 3 ] Sonic 4
+echo  [ 4 ] Extras 
 echo.
 echo  [ / ] Settings
-echo  [ - ] EXIT
+echo  [ - ] Exit
 echo.
 set /p choice= Category:
 if %choice%==/ goto:Settings
