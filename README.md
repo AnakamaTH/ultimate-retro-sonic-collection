@@ -29,4 +29,10 @@ URSL (PSOP) is a collection and launcher including multiple classic sonic games 
 - Sonic 4 Epsiode 1 (Need to have on Steam)
 - Sonic 4 Epsiode 2 (Need to have on Steam)
 
+# Features
+- Install all requied redist if installed for the first time
+- Categorized UI
+- Understandable code
+- 500+ letters
+
 ## ALSO THIS IS NOT A PIRACY PROJECT (anymore), YOU WILL BE ASKED TO PUT REQUIED FILES
