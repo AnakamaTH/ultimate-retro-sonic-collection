@@ -21,6 +21,7 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 :FirstTime
 if exist data\req\check.txt (set first=1) else set first=0
 
+if %redist%=0 goto:RedistNotInstalled
 if %first%=0 goto:Menu
 if %first%=1 goto:Warning
 
@@ -50,9 +51,13 @@ start /wait bizhawk_prereqs.exe /passive /norestart
 
 set IS_X64=0 && if "%PROCESSOR_ARCHITECTURE%"=="AMD64" (set IS_X64=1) else (if "%PROCESSOR_ARCHITEW6432%"=="AMD64" (set IS_X64=1))
 
+:XCheck
+
 if "%IS_X64%" == "1" goto X64
 
 :X86
+
+set redist=0
 
 start /wait vcredist2005_x86.exe /q
 
@@ -451,9 +456,15 @@ goto:Menu
 SET /P AREYOUSURES4E2=Do you have Sonic 4 Epsiode 2 on Steam? (Y/N)?
 IF /I "%AREYOUSURES4E2%" NEQ "Y"
 start steam://launch/203650  
-start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/ 
+start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/
+pause
+goto:Sonic4
 
-goto:Menu
+:RedistNotInstalled
+call :ColorText C "Looks like the redist couldn't fully be installed"
+echo Installing Redist again...
+echo.
+goto:XCheck
 
 :: SETTINGS
 
