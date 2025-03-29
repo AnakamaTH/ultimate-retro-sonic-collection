@@ -4,7 +4,7 @@
 @echo off
 set version=4.01
 set directory=%cd%
-set name=Classic Sonic Hub (PSOP)
+set name=Ultimate Retro Sonic Launcher (PSOP)
 set first=0
 echo Please wait...
 title %name% V%version%
