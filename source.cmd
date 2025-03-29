@@ -1,5 +1,6 @@
 :: WIP BUILD
 :: Created by AnakamaTheHedgehog
+:: Please credit AnakamaTheHedgehog if used a code from here
 
 @echo off
 set version=4.01
@@ -505,7 +506,7 @@ echo Wanna suggest a game to add or report a bug?
 echo (A mod, remake etc.)
 SET /P AREYOUSURE=Are you sure (Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
-start https://github.com/AnakamaTH/proper-sonic-origins-plus/issues/new
+start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/issues/new
 goto:Settings
 
 :: Credits Menu
