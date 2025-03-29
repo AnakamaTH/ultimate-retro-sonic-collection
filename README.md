@@ -2,7 +2,7 @@
 
 URSL (PSOP) is a collection and launcher including multiple classic sonic games and tutorials on how to legally install them and load them all from 1 app!
 
-## Currently WiP
+Currently WiP
 
 # V4 Games 
 ## (Not Released, some may not be in the final version)
@@ -39,4 +39,7 @@ URSL (PSOP) is a collection and launcher including multiple classic sonic games 
 - 500+ letters of code 
 - Automatic .rsdk installer for requied games
  
+# Discord
+[Discord](https://discord.gg/kSM2C7QSmU)
+
 ## ALSO THIS IS NOT A PIRACY PROJECT (anymore), YOU WILL BE ASKED TO PUT REQUIED FILES
