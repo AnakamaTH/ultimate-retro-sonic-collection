@@ -220,7 +220,7 @@ echo  Sonic the Hedgehog 4
 echo ============================================================
 echo.
 echo  [ 1 ] Sonic 4 Epsiode 1
-echo  [ 1 ] Sonic 4 Epsiode 2
+echo  [ 2 ] Sonic 4 Epsiode 2
 echo.
 echo  [ - ] GO BACK
 echo.
@@ -420,9 +420,37 @@ goto:Menu
 :: Sonic 4 Launch scripts
 
 :4ep1
-SET /P AREYOUSURE1=Do you have Sonic 4 Epsiode 1 on Steam? (Y/N)?
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO :NoPiracyS4EP1
-steam://launch/202530
+cls
+pushd %~dp0
+set "choice=-"
+echo.
+echo Do you have Sonic 4 Epsiode 1 on Steam?
+echo.
+set /p choice= Y/N: 
+if %choice%==y goto:4ep1steam
+if %choice%==Y goto:4ep1steam
+if %choice%==N goto:NoPiracyS4EP1
+if %choice%==n goto:NoPiracyS4EP1
+
+:4ep1steam
+echo Launching Sonic 4 Epsiode 1 with Steam
+start steam://launch/202530
+timeout 2 > NUL
+goto:Menu
+
+:4ep2
+cls
+pushd %~dp0
+set "choice=-"
+echo.
+echo Do you have Sonic 4 Epsiode 2 on Steam?
+echo.
+set /p choice= Y/N: 
+if %choice%==y goto:4ep2steam
+if %choice%==Y goto:4ep2steam
+if %choice%==N goto:NoPiracyS4EP2
+if %choice%==n goto:NoPiracyS4EP2
+
 
 :NoPiracyS4EP1
 echo This project doesn't support piracy
@@ -430,13 +458,37 @@ echo If you don't have Sonic 4 Epsiode 1 on Steam, you have to buy it!
 echo If you have the game on another platform, you can add its files directly into data\others\s4ep1
 pause
 start https://store.steampowered.com/app/202530/Sonic_the_Hedgehog_4__Episode_I/
-
 goto:Menu
+
+
 
 :4ep2
-steam://launch/203650
+cls
+pushd %~dp0
+set "choice=-"
+echo.
+echo Do you have Sonic 4 Epsiode 2 on Steam?
+echo.
+set /p choice= Y/N: 
+if %choice%==y goto:4ep2steam
+if %choice%==Y goto:4ep2steam
+if %choice%==N goto:NoPiracyS4EP2
+if %choice%==n goto:NoPiracyS4EP2
 
+:4ep2steam
+echo Launching Sonic 4: Epsiode 2 on Steam
+start steam://launch/203650
+timeout 2 > NUL
 goto:Menu
+
+:NoPiracyS4EP2
+echo This project doesn't support piracy
+echo If you don't have Sonic 4 Epsiode 2 on Steam, you have to buy it!
+echo If you have the game on another platform, you can add its files directly into data\others\s4ep1
+pause
+start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/
+goto:Menu
+
 
 :: SETTINGS
 
