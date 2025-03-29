@@ -25,7 +25,8 @@ URSL (PSOP) is a collection and launcher including multiple classic sonic games 
 
 - Sonic Forever: Expansion Pack
 - Sonic 3: Angel Island Revisited
-- Sonic Mania Plus
-
+- Sonic Mania Plus (Need to have on Steam) 
+- Sonic 4 Epsiode 1 (Need to have on Steam)
+- Sonic 4 Epsiode 2 (Need to have on Steam)
 
 ## ALSO THIS IS NOT A PIRACY PROJECT (anymore), YOU WILL BE ASKED TO PUT REQUIED FILES
