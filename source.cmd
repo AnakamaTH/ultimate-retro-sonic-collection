@@ -494,8 +494,8 @@ goto:Menu
 
 :updates
 :: Open the latest version page.
-start https://github.com/AnakamaTH/proper-sonic-origins-plus/releases
-goto:Menu
+start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/releases
+goto:Settings
 
 :: Suggest menu with a Yes/No section.
 
@@ -506,7 +506,7 @@ echo (A mod, remake etc.)
 SET /P AREYOUSURE=Are you sure (Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
 start https://github.com/AnakamaTH/proper-sonic-origins-plus/issues/new
-goto:Menu
+goto:Settings
 
 :: Credits Menu
 
