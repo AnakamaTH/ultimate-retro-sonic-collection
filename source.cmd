@@ -88,6 +88,8 @@ start /wait vcredist2013_x64.exe /passive /norestart
 start /wait vcredist2015_2017_2019_2022_x86.exe /passive /norestart
 start /wait vcredist2015_2017_2019_2022_x64.exe /passive /norestart
 
+:: Delete the file to make it not running for the first time anymore
+
 :EndRedist
 del data\req\check.txt
 cd ..
