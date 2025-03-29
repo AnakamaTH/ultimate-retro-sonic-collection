@@ -23,8 +23,6 @@ URSL (PSOP) is a collection and launcher including multiple classic sonic games 
 
 ## Extra 
 
-- Sonic Forever
-- Sonic 2 Absolute
 - Sonic Forever: Expansion Pack
 - Sonic 3: Angel Island Revisited
 - Sonic Mania Plus
