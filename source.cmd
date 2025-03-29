@@ -92,7 +92,7 @@ pushd %~dp0
 set "choice=-"
 echo.
 echo ============================================================
-echo  Proper Sonic Origins+ V4 
+echo  %name% V%version%
 echo ============================================================
 echo.
 echo  [ 1 ] 16 BIT CLASSICS
