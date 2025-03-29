@@ -441,8 +441,8 @@ start https://store.steampowered.com/app/202530/Sonic_the_Hedgehog_4__Episode_I/
 goto:Menu
 
 :4ep2
-SET /P AREYOUSURE1=Do you have Sonic 4 Epsiode 2 on Steam? (Y/N)?
-IF /I "%AREYOUSURE%" NEQ "Y"
+SET /P AREYOUSURES4E2=Do you have Sonic 4 Epsiode 2 on Steam? (Y/N)?
+IF /I "%AREYOUSURES4E2%" NEQ "Y"
 start steam://launch/203650  
 start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/ 
 
