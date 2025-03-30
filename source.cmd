@@ -362,10 +362,10 @@ start Restored.exe
 goto:Menu
 
 :mania
-cd data\extra\mania
-echo Starting Sonic Mania Plus
-start SonicMania.exe
-goto:Menu
+echo Launching Sonic Mania on Steam
+start steam://launch/584400
+timeout 2 > NUL
+goto:Steam
 
 :: SMS1 to CHAOS launch scripts
 
