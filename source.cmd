@@ -1,16 +1,21 @@
 :: WIP BUILD
 :: Created by AnakamaTheHedgehog
-:: Please credit AnakamaTheHedgehog if used a code from here
 
 @echo off
+echo Please wait...
+(NET FILE||(powershell start-process -FilePath '%0' -verb runas)&&(exit \B)) >NUL 2>&1
+(NET FILE||(exit)) >NUL 2>&1
+
+:Variables
 set version=4.01
 set directory=%cd%
 set name=Ultimate Retro Sonic Collection (PSOP)
-set first=0
-echo Please wait...
+set epic=Epic Games
+set oepic=on Epic Games
+set sm=Steam
+set osm=on Steam
+
 title %name% V%version%
-(NET FILE||(powershell start-process -FilePath '%0' -verb runas)&&(exit \B)) >NUL 2>&1
-(NET FILE||(exit)) >NUL 2>&1
 
 :: Color text thing
 
@@ -21,8 +26,8 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 :FirstTime
 if exist data\req\check.txt (set first=1) else set first=0
 
-if %first%=1 goto:Warning
-if %first%=0 goto:Menu
+if %first%==1 goto:Warning
+if %first%==0 goto:Menu
 
 :: Show a warning for installing all the files
 
@@ -98,8 +103,8 @@ echo ============================================================
 echo.
 echo  [ 1 ] 16 Bit Classics
 echo  [ 2 ] Emulator
-echo  [ 3 ] Steam
-echo  [ 4 ] Extras
+echo  [ 3 ] Steam and Epic Games
+echo  [ 4 ] EXTRA
 echo.
 echo  [ / ] Settings
 echo  [ - ] EXIT
@@ -109,7 +114,7 @@ if %choice%==/ goto:Settings
 if %choice%==\ goto:Settings
 if %choice%==1 goto:16BitClassics
 if %choice%==2 goto:Emulator
-if %choice%==3 goto:Steam
+if %choice%==3 goto:Paid
 if %choice%==4 goto:extra
 if %choice%==- goto:exit
 if %choice%==c goto:credits
@@ -214,26 +219,71 @@ if %choice%==8 goto:chaos
 if %choice%==+ goto:chaos
 if %choice%==- goto:Menu
 
-:Steam
+:Paid
 cls
+set back=Paid
 pushd %~dp0
 set "choice=-"
 echo.
 echo ============================================================
-echo  Steam
+echo  Select the platform
+echo ============================================================
+echo.
+echo  [ 1 ] Steam
+echo  [ 2 ] Epic Games
+echo.
+echo  [ - ] GO BACK
+echo.
+set /p choice= Game: 
+if %choice%==1 goto:Steam
+if %choice%==2 goto:EpicGames
+if %choice%==- goto:Menu
+
+:Steam
+cls
+set platform=Steam
+pushd %~dp0
+set "choice=-"
+echo.
+echo ============================================================
+echo  %platform%
 echo ============================================================
 echo.
 echo  [ 1 ] Sonic 4 Epsiode 1
 echo  [ 2 ] Sonic 4 Epsiode 2
-echo  [ 3 ] Sonic Mania Plus
+echo  [ 3 ] Sonic Mania
+echo  [ 4 ] Sonic Origins
+echo  [ 5 ] Sonic Adventure 2
 echo.
 echo  [ - ] GO BACK
 echo.
 set /p choice= Game: 
 if %choice%==1 goto:4ep1
 if %choice%==2 goto:4ep2
-if %choice%==3 goto:mania
-if %choice%==- goto:Menu
+if %choice%==3 goto:maniasteam
+if %choice%==4 goto:originssteam
+if %choice%==5 goto:sa2%platform%
+if %choice%==- goto:%back%
+
+:EpicGames
+cls
+set platform=Epic Games
+pushd %~dp0
+set "choice=-"
+echo.
+echo ============================================================
+echo  %platform%
+echo ============================================================
+echo.
+echo  [ 1 ] Sonic Mania Plus
+echo  [ 2 ] Sonic Origins
+echo.
+echo  [ - ] GO BACK
+echo.
+set /p choice= Game: 
+if %choice%==1 goto:maniaepic
+if %choice%==2 goto:originsepic
+if %choice%==- goto:%back%
 
 :Extra
 cls
@@ -248,7 +298,6 @@ echo  [ 1 ] Sonic Forever
 echo  [ 2 ] Sonic 2 Absolute
 echo  [ 3 ] Sonic Forever: Expansion Pack
 echo  [ 4 ] Sonic 3 Angel Island Revisited
-echo  [ 5 ] Sonic Mania Plus
 echo.
 echo  [ - ] GO BACK
 echo.
@@ -257,10 +306,45 @@ if %choice%==1 goto:s1f
 if %choice%==2 goto:s2a
 if %choice%==3 goto:sonicforeverexpensionpack
 if %choice%==4 goto:3air
-if %choice%==5 goto:mania
 if %choice%==- goto:Menu
 
-:: SONIC1 to SONIC3 launch
+:: Steam - Epic Games launch scripts
+
+:sa2steam
+cls
+echo Launching Sonic Adventure 2 %osm%
+start steam://launch/213610
+timeout 2 > NUL
+goto:%platform%
+
+:originsepic
+cls
+echo Launching Sonic Origins %oepic%
+start com.epicgames.launcher://apps/78705aae6f39495e920966615c7a22ae%3A6816faab4bc34aaaad5bba36ca7af5f6%3A5070a8e44cf74ba3b9a4ca0c0dce5cf1?action=launch&silent=false
+timeout 2 > NUL
+goto:EpicGames
+
+:originssteam
+cls
+echo Launching Sonic Origins %osm%
+start %platform%://launch/1794960
+timeout 2 > NUL
+goto:Steam
+
+:maniasteam
+cls
+echo Launching Sonic Mania %osm%
+start steam://launch/584400
+timeout 2 > NUL
+goto:Steam
+
+:maniaepic
+cls
+echo Launching Sonic Mania %oepic%
+start start com.epicgames.launcher://apps/78705aae6f39495e920966615c7a22ae%3A6816faab4bc34aaaad5bba36ca7af5f6%3A5070a8e44cf74ba3b9a4ca0c0dce5cf1?action=launch&silent=false
+timeout 2 > NUL
+goto:Steam
+
 
 :sonic
 cls
@@ -275,22 +359,21 @@ goto:Menu
 :sonicdata
 cls
 echo Please put a Sonic the Hedgehog Classic apk file or a Sonic 1 Data.rsdk into the "data" folder and press a button...
-pause
 cd ..
 cd ..
 if exist *.rsdk (goto:s1rsdk) else echo No RSDK files found.
 pause
-goto:16BitClassics
+goto:sonic
 
 :s1rsdk
 set directory=%cd%
 echo RSDK file found
 rename *.rsdk Data.rsdk
-move Data.rsdk classic\sonic
+move *.rsdk classic\sonic
 echo %cd%
 pause
-if exist classic\sonic\Data.rsdk (call :ColorText 9 "Succes") else goto:errors1
-cd classic\sonic
+if exist classic\sonic\data.rsdk (call :ColorText 9 "Succes") else goto:errors1
+cd %cdsonic%
 timeout 2 > NUL
 start RSDKv4_64.exe
 goto:16BitClassics
@@ -328,6 +411,7 @@ timeout 2 > NUL
 goto:Menu
 
 :: S1F to MANIA Launch scripts
+
 :sonicforever
 cd data\extra\s1f
 echo Opening Sonic Forever
@@ -361,12 +445,6 @@ cd data\extra\soniccdrestored
 echo Opening Sonic CD Restored.
 start Restored.exe
 goto:Menu
-
-:mania
-echo Launching Sonic Mania on Steam
-start steam://launch/584400
-timeout 2 > NUL
-goto:Steam
 
 :: SMS1 to CHAOS launch scripts
 
@@ -496,22 +574,13 @@ pause
 start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/
 goto:Menu
 
-:NoPiracyMANIA
-echo This project doesn't support piracy
-echo If you don't have Sonic Mania on Steam, you have to buy it!
-echo If you have the game on another platform,(Epic Games etc.) you can add its files directly into data\others\mania to launch!
-pause
-start https://store.steampowered.com/app/584400/Sonic_Mania/
-start https://store.steampowered.com/app/845640/Sonic_Mania__Encore_DLC/
-goto:Menu
-
 
 :: SETTINGS
 
 :updates
 :: Open the latest version page.
-start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/releases
-goto:Settings
+start https://github.com/AnakamaTH/proper-sonic-origins-plus/releases
+goto:Menu
 
 :: Suggest menu with a Yes/No section.
 
@@ -521,8 +590,8 @@ echo Wanna suggest a game to add or report a bug?
 echo (A mod, remake etc.)
 SET /P AREYOUSURE=Are you sure (Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
-start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/issues/new
-goto:Settings
+start https://github.com/AnakamaTH/proper-sonic-origins-plus/issues/new
+goto:Menu
 
 :: Credits Menu
 
@@ -552,7 +621,7 @@ goto:Menu
 :: Close the launcher
 
 :Exit
-echo Close the program?
+echo Close the launcher?
 SET /P AREYOUSURE=Are you sure (Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
 
