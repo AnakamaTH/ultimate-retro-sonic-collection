@@ -551,7 +551,7 @@ goto:Menu
 :: Close the launcher
 
 :Exit
-echo Close the launcher?
+echo Close the program?
 SET /P AREYOUSURE=Are you sure (Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
 
