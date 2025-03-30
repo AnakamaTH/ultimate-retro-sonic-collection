@@ -41,4 +41,6 @@ URSL (PSPO) is a collection and launcher including multiple classic sonic games 
 
 ## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk), OR HAVE THE GAME ON STEAM (it'll launch from there)
 
+## Other
+
 Obviously this project wouldn't exist without the decomps so show them some support!
