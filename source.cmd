@@ -1,5 +1,6 @@
 :: WIP BUILD
 :: Created by AnakamaTheHedgehog
+:: CREDIT IF USED ANY CODE FROM HERE!
 
 @echo off
 echo Please wait...
@@ -387,16 +388,18 @@ goto:Menu
 
 :sonicdata
 cls
-echo Please put a Sonic the Hedgehog Classic apk file or a Sonic 1 Data.rsdk into the "data" folder and press a button...
+set game= Sonic 1
+echo Please put a %game% "Data.rsdk" into the "data" folder.
 cd ..
 cd ..
+echo.
+pause
 if exist *.rsdk (goto:s1rsdk) else echo No RSDK files found.
 pause
 echo Going back...
 goto:%back%
 
 :s1rsdk
-set directory=%cd%
 echo RSDK file found
 rename *.rsdk Data.rsdk
 move *.rsdk classic\sonic
@@ -417,7 +420,10 @@ echo Press any key to go back...
 pause>nul
 goto:%back%
 
+:: SONIC 2 RSDK STUFF
+
 :sonic2
+set game=Sonic 2
 cls
 cd data\classic\sonic2
 echo Checking data.rsdk..
@@ -428,16 +434,17 @@ goto:Menu
 
 :sonic2data
 cls
-echo Please put a Sonic 2 Data.rsdk into the "data" folder and press a button...
+echo Please put a %game% "Data.rsdk" into the "data" folder
 cd ..
 cd ..
+echo.
+pause
 if exist *.rsdk (goto:s2rsdk) else echo No RSDK files found.
 pause
 echo Going back...
 goto:%back%
 
 :s2rsdk
-set directory=%cd%
 echo RSDK file found
 rename *.rsdk Data.rsdk
 move Data.rsdk classic\sonic2
@@ -458,6 +465,8 @@ echo Press any key to go back...
 pause>nul
 goto:%back%
 
+:: 
+
 :soniccd
 cd data\classic\soniccd
 echo Opening Sonic CD
@@ -472,14 +481,7 @@ start SONIC3K.EXE
 timeout 2 > NUL
 goto:%back%
 
-:: S1F to MANIA Launch scripts
-
-:2absolute
-cd data\extra\s2a
-echo Opening Sonic 2 Absolute
-start Sonic2Absolute.exe
-timeout 2 > NUL
-goto:%back%
+:: Extras
 
 :3air
 cd data\extra\s3air
@@ -553,10 +555,10 @@ call :ColorText 2 "LEGAL NOTE: THIS LAUNCHER HAS NOTHING TO DO WITH SEGA OR SONI
 echo.
 echo.
 echo AnakamaTheHedgehog: Batch Scripts, Collection, idea.
-echo SEGA: Sonic The Hedgehog, the logo, the base game and the character, the series.
-echo RSDKModding: RSDKv4 Decomplation.
-echo Christian Whitehead: Sonic Mania Plus.
-echo Karl: Sonic 1 Expansion Pack Mod for Sonic Forever.
+echo SEGA: Sonic The Hedgehog, the games, the logo, the base game, the character, and the series.
+echo TASEmulators Team: EmuHawk Emulator
+echo RSDKModding Team: RSDKv4 Decomplation.
+echo Gabe Newel: Steam platform.
 echo Eukaryot: Sonic 3 A.I.R.
 echo Korama: Sonic 3 and Knuckles Patch, Sega PC Reloaded.
 echo.
