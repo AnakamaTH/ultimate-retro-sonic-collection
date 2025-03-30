@@ -140,13 +140,13 @@ echo.
 echo  [ - ] Go Back
 echo.
 set /p choice= Option:
-if %choice%==- goto:Menu
+if %choice%==- goto:help
 if %choice%==c goto:credits
 if %choice%==C goto:credits
 if %choice%==/ goto:settings
 if %choice%==v goto:version
 if %choice%==V goto:version
-if %choice%==+ goto:suggest
+if %choice%==+ goto:issues
 
 :version
 cls
@@ -175,7 +175,7 @@ echo Try Sonic Genesis Collection on GameJolt today!
 echo Credits to AnakamaTheHedgehog
 timeout 2 > NUL
 start https://gamejolt.com/games/sonicgenesiscollection/883397
-timeout 2 > NUL
+timeout 1 > NUL
 goto:%back%
 
 :16Bit
@@ -313,18 +313,16 @@ echo ============================================================
 echo  Extra
 echo ============================================================
 echo.
-echo  [ 1 ] Sonic Forever
-echo  [ 2 ] Sonic 2 Absolute
-echo  [ 3 ] Sonic Forever: Expansion Pack
-echo  [ 4 ] Sonic 3 Angel Island Revisited
+echo  [ 1 ] Sonic 3 Angel Island Revisited
+echo  [ 2 ] Sonic CD Restored
 echo.
+echo  [ + ] Install Sonic 3 A.I.R. Mods
 echo  [ - ] GO BACK
 echo.
 set /p choice= Game: 
-if %choice%==1 goto:s1f
-if %choice%==2 goto:s2a
-if %choice%==3 goto:sonicforeverexpensionpack
-if %choice%==4 goto:3air
+if %choice%==1 goto:3air
+if %choice%==2 goto:cdrestored
+if %choice%==+ goto:s3airmods
 if %choice%==- goto:Menu
 
 :: Steam - Epic Games launch scripts
@@ -504,15 +502,15 @@ cls
 call :ColorText C "ERROR"
 echo.
 echo The data file could not be extracted.
-echo Please make sure you have provided Sonic 2 data.rsdk
-echo Data.rsdk can be found inside the "Sonic the Hedgehog 2 Classic" apk file or in Sonic Origins files.
+echo Please make sure you have provided %game% data.rsdk
+echo Data.rsdk can be found inside the "Sonic the Hedgehog CD" apk file or in Sonic Origins files.
 echo Press any key to go back...
 pause>nul
 goto:%back%
 
 :sonic3
 cd data\classic\sonic3
-echo Opening Sonic 3 and Knuckles
+echo Opening Sonic 3 and Knuckles Collection
 start SONIC3K.EXE
 timeout 2 > NUL
 goto:%back%
@@ -563,22 +561,31 @@ msg * Press "Alt + Enter" for Fullscreen
 goto:%back%
 
 
+:s3airmods
+cls
+cd data\extra\s3air
+set directory=%cd%
+cd ..
+cd ..
+call :ColorText 2 " Mods can be placed at"
+echo  "%directory%"
+echo.
+pause
+goto:%back%
+
 :: SETTINGS
 
 :updates
 start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/releases
-goto:Menu
+goto:%back%
 
-:: Suggest menu with a Yes/No section.
-
-:suggest
+:issues
 cls
-echo Wanna suggest a game to add or report a bug?
-echo (A mod, remake etc.)
-SET /P AREYOUSURE=Are you sure (Y/N)?
+echo Do you think something in this program violates copyright laws or found a bug?
+SET /P AREYOUSURE=(Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
 start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/issues/new
-goto:Menu
+goto:%back%
 
 :: Credits Menu
 
@@ -594,7 +601,7 @@ echo AnakamaTheHedgehog: Batch Scripts, Collection, idea.
 echo SEGA: Sonic The Hedgehog, the games, the logo, the base game, the character, and the series.
 echo TASEmulators Team: EmuHawk Emulator
 echo RSDKModding Team: RSDKv4 Decomplation.
-echo Gabe Newel: Steam platform.
+echo SteamDB: Steam games ID and launch script example.
 echo Eukaryot: Sonic 3 A.I.R.
 echo Korama: Sonic 3 and Knuckles Patch, Sega PC Reloaded.
 echo.
