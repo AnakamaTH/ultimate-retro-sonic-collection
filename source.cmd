@@ -8,6 +8,7 @@ echo Please wait...
 (NET FILE||(exit)) >NUL 2>&1
 
 :Variables
+echo %first%
 set version=4.01
 set directory=%cd%
 set name=Ultimate Retro Sonic Collection (PSOP)
@@ -27,10 +28,41 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
 :FirstTime
 if exist data\req\check.txt (set first=1) else set first=0
 
-if %first%==1 goto:Warning
+if %first%==1 goto:VersionLog
 if %first%==0 goto:Menu
 
 :: Show a warning for installing all the files
+
+:VersionLog
+cls
+call :ColorText C "%name% %version% Changelog"
+echo.
+echo.
+echo Made by:
+call :ColorText 2 "AnakamaTheHedgehog"
+echo.
+echo.
+echo 1. This is not a piracy project anymore.
+echo.
+echo 2. Removed Team Forever Games. (Copyright Issues)
+echo.
+echo 3. Removed Sonic SMS Remakes and Chaos remake. (Copyright Issues)
+echo.
+echo 4. Added automatic redist installer.
+echo.
+echo 5. Added direct Steam launcher.
+echo.
+echo 6. Added Epic Games launcher.
+echo.
+echo 7. Added Emulator versions. (Thanks to BizHawk)
+echo.
+echo 8. Added automatic redist installer.
+echo.
+echo 9. The code is now more advanced.
+echo.
+call :ColorText E "Thanks for reading..."
+echo.
+pause
 
 :Warning
 cls
@@ -44,6 +76,7 @@ pause>nul
 :Redist
 cls
 call :ColorText 9 "Installing requied redist..."
+set first=2
 cd data\redist
 start /wait bizhawk_prereqs.exe /passive /norestart
 
@@ -316,7 +349,7 @@ echo.
 echo  [ 1 ] Sonic 3 Angel Island Revisited
 echo  [ 2 ] Sonic CD Restored
 echo.
-echo  [ + ] Install Sonic 3 A.I.R. Mods
+echo  [ + ] How to Install Sonic 3 A.I.R. Mods?
 echo  [ - ] GO BACK
 echo.
 set /p choice= Game: 
@@ -567,7 +600,7 @@ cd data\extra\s3air
 set directory=%cd%
 cd ..
 cd ..
-call :ColorText 2 " Mods can be placed at"
+call :ColorText 2 " Mods can be placed at
 echo  "%directory%"
 echo.
 pause
