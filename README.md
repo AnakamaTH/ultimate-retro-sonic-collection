@@ -39,7 +39,6 @@ Currently WiP
 - 500+ letters of code 
 - Automatic .rsdk installer for requied games
 #
-
 # [Discord Server](https://discord.gg/kSM2C7QSmU)
 
 ## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk)
