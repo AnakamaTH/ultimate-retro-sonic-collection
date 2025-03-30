@@ -280,17 +280,17 @@ cd ..
 cd ..
 if exist *.rsdk (goto:s1rsdk) else echo No RSDK files found.
 pause
-goto:sonic
+goto:16BitClassics
 
 :s1rsdk
 set directory=%cd%
 echo RSDK file found
 rename *.rsdk Data.rsdk
-move *.rsdk classic\sonic
+move Data.rsdk classic\sonic
 echo %cd%
 pause
-if exist classic\sonic\data.rsdk (call :ColorText 9 "Succes") else goto:errors1
-cd %cdsonic%
+if exist classic\sonic\Data.rsdk (call :ColorText 9 "Succes") else goto:errors1
+cd classic\sonic
 timeout 2 > NUL
 start RSDKv4_64.exe
 goto:16BitClassics
