@@ -1,6 +1,6 @@
 # Ultimate Retro Sonic Collection (Also known as Proper Sonic Origins Plus)
 
-URSL (PSOP) is a collection and launcher including multiple classic sonic games and tutorials on how to legally install them and load them all from 1 app!
+URSL (PSPO) is a collection and launcher including multiple classic sonic games and allow you to legally install and  load them all from 1 app!
 
 Currently WiP
 
