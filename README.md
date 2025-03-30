@@ -41,4 +41,6 @@ Currently WiP
  
 # [Discord Server](https://discord.gg/kSM2C7QSmU)
 
-## ALSO THIS IS NOT A PIRACY PROJECT (anymore), YOU WILL BE ASKED TO PUT REQUIED FILES
+## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk)
+
+obviously this project wouldnt exist without the decomps so show them some support
