@@ -96,10 +96,10 @@ echo ============================================================
 echo  %name% V%version%
 echo ============================================================
 echo.
-echo  [ 1 ] 16 BIT CLASSICS
-echo  [ 2 ] EMULATOR 
-echo  [ 3 ] SONIC 4
-echo  [ 4 ] EXTRA
+echo  [ 1 ] 16 Bit Classics
+echo  [ 2 ] Emulator
+echo  [ 3 ] Steam
+echo  [ 4 ] Extras
 echo.
 echo  [ / ] Settings
 echo  [ - ] EXIT
@@ -109,7 +109,7 @@ if %choice%==/ goto:Settings
 if %choice%==\ goto:Settings
 if %choice%==1 goto:16BitClassics
 if %choice%==2 goto:Emulator
-if %choice%==3 goto:Sonic4
+if %choice%==3 goto:Steam
 if %choice%==4 goto:extra
 if %choice%==- goto:exit
 if %choice%==c goto:credits
@@ -214,23 +214,25 @@ if %choice%==8 goto:chaos
 if %choice%==+ goto:chaos
 if %choice%==- goto:Menu
 
-:Sonic4
+:Steam
 cls
 pushd %~dp0
 set "choice=-"
 echo.
 echo ============================================================
-echo  Sonic the Hedgehog 4
+echo  Steam
 echo ============================================================
 echo.
 echo  [ 1 ] Sonic 4 Epsiode 1
 echo  [ 2 ] Sonic 4 Epsiode 2
+echo  [ 3 ] Sonic Mania Plus
 echo.
 echo  [ - ] GO BACK
 echo.
 set /p choice= Game: 
 if %choice%==1 goto:4ep1
 if %choice%==2 goto:4ep2
+if %choice%==3 goto:mania
 if %choice%==- goto:Menu
 
 :Extra
