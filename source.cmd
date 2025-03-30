@@ -468,10 +468,46 @@ goto:%back%
 :: 
 
 :soniccd
+set game=Sonic CD
+cls
 cd data\classic\soniccd
-echo Opening Sonic CD
+echo Checking data.rsdk..
+if exist data.rsdk (echo Succes, opening) else goto:cddata
 start RSDKv3_64.exe
 timeout 2 > NUL
+goto:Menu
+
+:cddata
+cls
+echo Please put a %game% "Data.rsdk" into the "data" folder
+cd ..
+cd ..
+echo.
+pause
+if exist *.rsdk (goto:cdrsdk) else echo No RSDK files found.
+pause
+echo Going back...
+goto:%back%
+
+:cdrsdk
+echo RSDK file found
+rename *.rsdk Data.rsdk
+move Data.rsdk classic\soniccd
+if exist classic\soniccd\data.rsdk (call :ColorText 9 "Succes") else goto:errorscd
+cd classic\soniccd
+timeout 2 > NUL
+start RSDKv3_64.exe
+goto:%back%
+
+:errorscd
+cls
+call :ColorText C "ERROR"
+echo.
+echo The data file could not be extracted.
+echo Please make sure you have provided Sonic 2 data.rsdk
+echo Data.rsdk can be found inside the "Sonic the Hedgehog 2 Classic" apk file or in Sonic Origins files.
+echo Press any key to go back...
+pause>nul
 goto:%back%
 
 :sonic3
