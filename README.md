@@ -41,6 +41,6 @@ Currently WiP
 #
 # [Discord Server](https://discord.gg/kSM2C7QSmU)
 
-## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk)
+## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk), OR HAVE THE GAME ON STEAM (it'll launch from there)
 
-obviously this project wouldnt exist without the decomps so show them some support
+Obviously this project wouldn't exist without the decomps so show them some support!
