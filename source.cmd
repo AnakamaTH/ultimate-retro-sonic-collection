@@ -495,6 +495,15 @@ pause
 start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/
 goto:Menu
 
+:NoPiracyMANIA
+echo This project doesn't support piracy
+echo If you don't have Sonic Mania on Steam, you have to buy it!
+echo If you have the game on another platform,(Epic Games etc.) you can add its files directly into data\others\mania to launch!
+pause
+start https://store.steampowered.com/app/584400/Sonic_Mania/
+start https://store.steampowered.com/app/845640/Sonic_Mania__Encore_DLC/
+goto:Menu
+
 
 :: SETTINGS
 
