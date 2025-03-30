@@ -94,6 +94,7 @@ cd ..
 
 :Menu
 cls
+set back=Menu
 pushd %~dp0
 set "choice=-"
 echo.
@@ -104,7 +105,7 @@ echo.
 echo  [ 1 ] 16 Bit Classics
 echo  [ 2 ] Emulator
 echo  [ 3 ] Steam and Epic Games
-echo  [ 4 ] EXTRA
+echo  [ 4 ] Extra
 echo.
 echo  [ / ] Settings
 echo  [ - ] EXIT
@@ -116,14 +117,14 @@ if %choice%==1 goto:16BitClassics
 if %choice%==2 goto:Emulator
 if %choice%==3 goto:Paid
 if %choice%==4 goto:extra
-if %choice%==- goto:exit
 if %choice%==c goto:credits
 if %choice%==C goto:credits
 if %choice%==+ goto:suggest
-if 
+if %choice%==- goto:exit
 
 :Settings
 cls
+set back=Settings
 pushd %~dp0
 set "choice=-"
 echo ============================================================
@@ -158,12 +159,27 @@ call :ColorText 9 "%name% V%version%"
 echo.
 echo.
 echo Press any button to exit...
-echo.
 pause>nul
-goto:Settings
+goto:%back%
 
-:16BitClassics
+:: AD
+:genesiscollection
+echo Why you should install Sonic Genesis Collection?
+timeout 1 > NUL
+echo Sonic Genesis Collection has more then 50 sonic games and rom hacks from Sega Genesis to choose from!
+timeout 1 > NUL
+echo With lots of customizability and incredible performance!
+timeout 1 > NUL
+echo Try Sonic Genesis Collection on GameJolt today!
+echo Credits to AnakamaTheHedgehog
+timeout 2 > NUL
+start https://gamejolt.com/games/sonicgenesiscollection/883397
+timeout 2 > NUL
+goto:%back%
+
+:16Bit
 cls
+set back=:16Bit
 pushd %~dp0
 set "choice=-"
 echo.
@@ -171,10 +187,10 @@ echo ============================================================
 echo  16 Bit Classics
 echo ============================================================
 echo. 
-echo  [ 1 ] Sonic the Hedgehog
-echo  [ 2 ] Sonic the Hedgehog 2
-echo  [ 3 ] Sonic the Hedgehog CD
-echo  [ 4 ] Sonic the Hedgehog 3 and Knuckles
+echo  [ 1 ] Sonic 1
+echo  [ 2 ] Sonic 2
+echo  [ 3 ] Sonic CD
+echo  [ 4 ] Sonic 3 and Knuckles
 echo.
 echo  [ - ] GO BACK
 echo.
@@ -187,6 +203,7 @@ if %choice%==- goto:Menu
 
 :Emulator
 cls
+set back=Emulator
 pushd %~dp0
 set "choice=-"
 echo.
@@ -216,7 +233,7 @@ if %choice%==5 goto:s2emu
 if %choice%==6 goto:tripletrouble
 if %choice%==7 goto:blast
 if %choice%==8 goto:chaos
-if %choice%==+ goto:chaos
+if %choice%==+ goto:genesiscollection
 if %choice%==- goto:Menu
 
 :Paid
@@ -288,6 +305,7 @@ if %choice%==- goto:%back%
 :Extra
 cls
 pushd %~dp0
+set back=Extra
 set "choice=-"
 echo.
 echo ============================================================
@@ -322,29 +340,40 @@ cls
 echo Launching Sonic Origins %oepic%
 start com.epicgames.launcher://apps/78705aae6f39495e920966615c7a22ae%3A6816faab4bc34aaaad5bba36ca7af5f6%3A5070a8e44cf74ba3b9a4ca0c0dce5cf1?action=launch&silent=false
 timeout 2 > NUL
-goto:EpicGames
+goto:%platform%
 
 :originssteam
 cls
 echo Launching Sonic Origins %osm%
 start %platform%://launch/1794960
 timeout 2 > NUL
-goto:Steam
+goto:%platform%
 
 :maniasteam
 cls
 echo Launching Sonic Mania %osm%
 start steam://launch/584400
 timeout 2 > NUL
-goto:Steam
+goto:%platform%
 
 :maniaepic
 cls
 echo Launching Sonic Mania %oepic%
 start start com.epicgames.launcher://apps/78705aae6f39495e920966615c7a22ae%3A6816faab4bc34aaaad5bba36ca7af5f6%3A5070a8e44cf74ba3b9a4ca0c0dce5cf1?action=launch&silent=false
 timeout 2 > NUL
-goto:Steam
+goto:%platform%
 
+:4ep1steam
+echo Launching Sonic 4 Epsiode 1 %osm%
+start steam://launch/202530
+timeout 2 > NUL
+goto:%platform%
+
+:4ep2steam
+echo Launching Sonic 4: Epsiode 2 %osm%
+start steam://launch/203650
+timeout 2 > NUL
+goto:%platform%
 
 :sonic
 cls
@@ -363,7 +392,8 @@ cd ..
 cd ..
 if exist *.rsdk (goto:s1rsdk) else echo No RSDK files found.
 pause
-goto:sonic
+echo Going back...
+goto:%back%
 
 :s1rsdk
 set directory=%cd%
@@ -376,7 +406,7 @@ if exist classic\sonic\data.rsdk (call :ColorText 9 "Succes") else goto:errors1
 cd %cdsonic%
 timeout 2 > NUL
 start RSDKv4_64.exe
-goto:16BitClassics
+goto:%back%
 
 :errors1
 cls
@@ -385,93 +415,52 @@ echo.
 echo The data file could not be extracted.
 echo Please make sure you have provided Sonic 1 data.rsdk
 echo Data.rsdk can be found inside the "Sonic the Hedgehog Classic" apk file or in Sonic Origins files.
-echo Press any key to go to the menu.
+echo Press any key to go back...
 pause>nul
-goto:Menu
+goto:%back%
 
 :sonic2
 cd data\classic\sonic2
 echo Opening Sonic 2
 start RSDKv4_64.exe
 timeout 2 > NUL
-goto:Menu
+goto:%back%
 
 :soniccd
 cd data\classic\soniccd
 echo Opening Sonic CD
 start RSDKv3_64.exe
 timeout 2 > NUL
-goto:Menu
+goto:%back%
 
 :sonic3
 cd data\classic\sonic3
 echo Opening Sonic 3 and Knuckles
 start SONIC3K.EXE
 timeout 2 > NUL
-goto:Menu
+goto:%back%
 
 :: S1F to MANIA Launch scripts
-
-:sonicforever
-cd data\extra\s1f
-echo Opening Sonic Forever
-start SonicForever.exe
-timeout 2 > NUL
-goto:Menu
-
-:sonicforeverexpensionpack
-cd data\extra\s1fpack
-echo Opening Sonic Forever Expansion Pack
-start SonicForever.exe
-timeout 2 > NUL
-goto:Menu
 
 :2absolute
 cd data\extra\s2a
 echo Opening Sonic 2 Absolute
 start Sonic2Absolute.exe
 timeout 2 > NUL
-goto:Menu
+goto:%back%
 
 :3air
 cd data\extra\s3air
 echo Opening Sonic 3 A.I.R.
 start Sonic3AIR.exe
 timeout 2 > NUL
-goto:Menu
+goto:%back%
 
 :cdr
 cd data\extra\soniccdrestored
 echo Opening Sonic CD Restored.
 start Restored.exe
-goto:Menu
-
-:: SMS1 to CHAOS launch scripts
-
-:sms1
-cd data\8bit
-echo Starting Sonic SMS Remake
-start SonicSMSRemake.exe
-goto:Menu
-
-:sms2
-cd data\8bit
-echo Starting Sonic SMS Remake 2
-start SonicSMSRemake2.exe
-goto:Menu
-
-:sms3
-cd data\8bit\Sonic SMS Remake 3
-echo Starting Sonic SMS Remake 3
-start SonicSMSRemake3TimelinesSAGE2023.exe
-goto:Menu
-
-:chaos
-cd data\8bit
-echo Starting Sonic Chaos Remake
-start SonicChaosRemake.exe
-goto:Menu
-
+goto:%back%
 
 :: Emulator launch scripts
 
@@ -480,106 +469,34 @@ cd data\emu
 start EmuHawk.exe roms\s1.gg
 timeout 2 > NUL
 msg * Press "Alt + Enter" for Fullscreen
-goto:Menu
+goto:%back%
+
 :s2emu
 cd data\emu
 start EmuHawk.exe roms\s2.gg
 timeout 2 > NUL
 msg * Press "Alt + Enter" for Fullscreen
-goto:Menu
+goto:%back%
 
 :tripletrouble
 cd data\emu
 start EmuHawk.exe roms\tripletrouble.gg
 timeout 2 > NUL
 msg * Press "Alt + Enter" for Fullscreen
-goto:Menu
+goto:%back%
 
 :blast
 cd data\emu
 start EmuHawk.exe roms\sblast.gg
 timeout 2 > NUL
 msg * Press "Alt + Enter" for Fullscreen
-goto:Menu
-
-:: Sonic 4 Launch scripts
-
-:4ep1
-cls
-pushd %~dp0
-set "choice=-"
-echo.
-echo Do you have Sonic 4 Epsiode 1 on Steam?
-echo.
-set /p choice= Y/N: 
-if %choice%==y goto:4ep1steam
-if %choice%==Y goto:4ep1steam
-if %choice%==N goto:NoPiracyS4EP1
-if %choice%==n goto:NoPiracyS4EP1
-
-:4ep1steam
-echo Launching Sonic 4 Epsiode 1 with Steam
-start steam://launch/202530
-timeout 2 > NUL
-goto:Menu
-
-:4ep2
-cls
-pushd %~dp0
-set "choice=-"
-echo.
-echo Do you have Sonic 4 Epsiode 2 on Steam?
-echo.
-set /p choice= Y/N: 
-if %choice%==y goto:4ep2steam
-if %choice%==Y goto:4ep2steam
-if %choice%==N goto:NoPiracyS4EP2
-if %choice%==n goto:NoPiracyS4EP2
-
-
-:NoPiracyS4EP1
-echo This project doesn't support piracy
-echo If you don't have Sonic 4 Epsiode 1 on Steam, you have to buy it!
-echo If you have the game on another platform, you can add its files directly into data\others\s4ep1
-pause
-start https://store.steampowered.com/app/202530/Sonic_the_Hedgehog_4__Episode_I/
-goto:Menu
-
-
-
-:4ep2
-cls
-pushd %~dp0
-set "choice=-"
-echo.
-echo Do you have Sonic 4 Epsiode 2 on Steam?
-echo.
-set /p choice= Y/N: 
-if %choice%==y goto:4ep2steam
-if %choice%==Y goto:4ep2steam
-if %choice%==N goto:NoPiracyS4EP2
-if %choice%==n goto:NoPiracyS4EP2
-
-:4ep2steam
-echo Launching Sonic 4: Epsiode 2 on Steam
-start steam://launch/203650
-timeout 2 > NUL
-goto:Menu
-
-:NoPiracyS4EP2
-echo This project doesn't support piracy
-echo If you don't have Sonic 4 Epsiode 2 on Steam, you have to buy it!
-echo If you have the game on another platform, you can add its files directly into data\others\s4ep1
-pause
-start https://store.steampowered.com/app/203650/Sonic_the_Hedgehog_4__Episode_II/
-goto:Menu
+goto:%back%
 
 
 :: SETTINGS
 
 :updates
-:: Open the latest version page.
-start https://github.com/AnakamaTH/proper-sonic-origins-plus/releases
+start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/releases
 goto:Menu
 
 :: Suggest menu with a Yes/No section.
@@ -590,7 +507,7 @@ echo Wanna suggest a game to add or report a bug?
 echo (A mod, remake etc.)
 SET /P AREYOUSURE=Are you sure (Y/N)?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
-start https://github.com/AnakamaTH/proper-sonic-origins-plus/issues/new
+start https://github.com/AnakamaTH/ultimate-retro-sonic-collection/issues/new
 goto:Menu
 
 :: Credits Menu
@@ -606,24 +523,27 @@ echo.
 echo AnakamaTheHedgehog: Batch Scripts, Collection, idea.
 echo SEGA: Sonic The Hedgehog, the logo, the base game and the character, the series.
 echo RSDKModding: RSDKv4 Decomplation.
-echo Team Forever: Sonic Forever and Sonic 2 Absolute.
 echo Christian Whitehead: Sonic Mania Plus.
 echo Karl: Sonic 1 Expansion Pack Mod for Sonic Forever.
-echo Creative Araya: Sonic SMS Remakes.
-echo Laiker_2003: Sonic Chaos Remake.
 echo Eukaryot: Sonic 3 A.I.R.
 echo Korama: Sonic 3 and Knuckles Patch, Sega PC Reloaded.
 echo.
-echo All rights reversed.
+echo All rights reserved.
 pause
 goto:Menu
 
 :: Close the launcher
 
 :Exit
+cls
 echo Close the launcher?
-SET /P AREYOUSURE=Are you sure (Y/N)?
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO :Menu
+set "choice=-"
+echo.
+set /p choice= Y/N: 
+if %choice%==y exit
+if %choice%==Y exit
+if %choice%==N goto:Menu
+if %choice%==n goto:Menu
 
 :: Color text thing
 
