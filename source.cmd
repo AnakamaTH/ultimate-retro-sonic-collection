@@ -275,6 +275,7 @@ goto:Menu
 :sonicdata
 cls
 echo Please put a Sonic the Hedgehog Classic apk file or a Sonic 1 Data.rsdk into the "data" folder and press a button...
+pause
 cd ..
 cd ..
 if exist *.rsdk (goto:s1rsdk) else echo No RSDK files found.
