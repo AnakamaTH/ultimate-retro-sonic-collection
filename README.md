@@ -2,8 +2,6 @@
 
 URSL (PSPO) is a collection and launcher including multiple classic sonic games and allow you to legally install and  load them all from 1 app!
 
-Currently WiP
-
 # V4 Games 
 ## (Not Released, some may not be in the final version)
 
@@ -36,11 +34,11 @@ Currently WiP
 - Install all requied redist if installed for the first time
 - Categorized UI
 - Understandable code
-- 500+ letters of code 
+- 600+ letters of code 
 - Automatic .rsdk installer for requied games
- 
+#
 # [Discord Server](https://discord.gg/kSM2C7QSmU)
 
-## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk)
+## THIS PROJECT DOES NOT ENDORE PIRACY, YOU NEED TO SUPPLY YOUR OWN GAME FILES (ex: roms and data.rsdk), OR HAVE THE GAME ON STEAM (it'll launch from there)
 
-obviously this project wouldnt exist without the decomps so show them some support
+Obviously this project wouldn't exist without the decomps so show them some support!
