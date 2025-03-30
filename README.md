@@ -36,7 +36,7 @@ Currently WiP
 - Install all requied redist if installed for the first time
 - Categorized UI
 - Understandable code
-- 500+ letters of code 
+- 600+ letters of code 
 - Automatic .rsdk installer for requied games
 #
 # [Discord Server](https://discord.gg/kSM2C7QSmU)
