@@ -400,10 +400,8 @@ set directory=%cd%
 echo RSDK file found
 rename *.rsdk Data.rsdk
 move *.rsdk classic\sonic
-echo %cd%
-pause
 if exist classic\sonic\data.rsdk (call :ColorText 9 "Succes") else goto:errors1
-cd %cdsonic%
+cd classic\sonic
 timeout 2 > NUL
 start RSDKv4_64.exe
 goto:%back%
@@ -420,10 +418,44 @@ pause>nul
 goto:%back%
 
 :sonic2
+cls
 cd data\classic\sonic2
-echo Opening Sonic 2
+echo Checking data.rsdk..
+if exist data.rsdk (echo Succes, opening) else goto:sonic2data
 start RSDKv4_64.exe
 timeout 2 > NUL
+goto:Menu
+
+:sonic2data
+cls
+echo Please put a Sonic 2 Data.rsdk into the "data" folder and press a button...
+cd ..
+cd ..
+if exist *.rsdk (goto:s2rsdk) else echo No RSDK files found.
+pause
+echo Going back...
+goto:%back%
+
+:s2rsdk
+set directory=%cd%
+echo RSDK file found
+rename *.rsdk Data.rsdk
+move Data.rsdk classic\sonic2
+if exist classic\sonic2\data.rsdk (call :ColorText 9 "Succes") else goto:errors2
+cd classic\sonic2
+timeout 2 > NUL
+start RSDKv4_64.exe
+goto:%back%
+
+:errors2
+cls
+call :ColorText C "ERROR"
+echo.
+echo The data file could not be extracted.
+echo Please make sure you have provided Sonic 2 data.rsdk
+echo Data.rsdk can be found inside the "Sonic the Hedgehog 2 Classic" apk file or in Sonic Origins files.
+echo Press any key to go back...
+pause>nul
 goto:%back%
 
 :soniccd
