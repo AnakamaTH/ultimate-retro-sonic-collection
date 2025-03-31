@@ -34,7 +34,7 @@ URSL (PSPO) is a collection and launcher including multiple classic sonic games 
 - Install all requied redist if installed for the first time
 - Categorized UI
 - Understandable code
-- 800+ letters of code 
+- 900+ letters of code 
 - Automatic .rsdk installer for requied games
 #
 # [Discord Server](https://discord.gg/kSM2C7QSmU)
