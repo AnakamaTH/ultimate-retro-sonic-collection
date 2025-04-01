@@ -9,7 +9,7 @@ URSL (PSPO) is a collection and launcher including multiple classic sonic games 
 
 - Sonic 1 Retro Engine
 - Sonic 2 Retro Engine
-- Sonic 3 & Knuckles PC Port
+- Sonic 3 & Knuckles Collection
 - Sonic CD Retro Engine
 
 ## Emulator
@@ -22,13 +22,20 @@ URSL (PSPO) is a collection and launcher including multiple classic sonic games 
 - Sonic Blast
 - Sonic Chaos
 
-## Extra 
+## Steam Games
+- Sonic 4 Epsiode 1
+- Sonic 4 Epsiode 2
+- Sonic Mania
+- Sonic Origins
+- Sonic Adventure 2
+- Sonic Generations
+- Sonic and All-Stars Racing Transformed Collection
+- Sonic Lost World
 
+## Extra 
+- Team Forever Games (if they allow it, currently no)
 - Sonic Forever: Expansion Pack
 - Sonic 3: Angel Island Revisited
-- Sonic Mania Plus (Need to have on Steam) 
-- Sonic 4 Epsiode 1 (Need to have on Steam)
-- Sonic 4 Epsiode 2 (Need to have on Steam)
 
 # Features
 - Install all requied redist if installed for the first time
