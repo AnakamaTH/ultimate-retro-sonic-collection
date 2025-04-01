@@ -1,11 +1,6 @@
 
-██╗░░░██╗██████╗░░██████╗░█████╗░
-██║░░░██║██╔══██╗██╔════╝██╔══██╗
-██║░░░██║██████╔╝╚█████╗░██║░░╚═╝
-██║░░░██║██╔══██╗░╚═══██╗██║░░██╗
-╚██████╔╝██║░░██║██████╔╝╚█████╔╝
-░╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░
-
+█░█ █▀█ █▀ █▀▀
+█▄█ █▀▄ ▄█ █▄▄
 
 URSL (PSPO) is a collection and launcher including multiple classic sonic games and allow you to legally install and  load them all from 1 app!
 
