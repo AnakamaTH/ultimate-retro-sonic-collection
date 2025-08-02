@@ -49,7 +49,7 @@
 
 ---
 
-## ⚠Legal Notice
+## Legal Notice
 This project **does NOT endorse piracy**.  
 You must **supply your own game files** (e.g., ROMs, `Data.rsdk`) or **own the game on Steam** (it will launch from there automatically).
 
