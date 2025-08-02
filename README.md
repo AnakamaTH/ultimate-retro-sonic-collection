@@ -34,7 +34,7 @@
 - Sonic Lost World  
 
 ### Extra
-- Team Forever Games *(if permission is granted – currently no)*  
+- Team Forever Games *(if permission is granted, currently no)*  
 - Sonic Forever: Expansion Pack *(if permission is granted from Team Forever also)*  
 - Sonic 3: Angel Island Revisited  
 
